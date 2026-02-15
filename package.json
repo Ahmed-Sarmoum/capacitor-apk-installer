@@ -1,6 +1,6 @@
 {
   "name": "capacitor-apk-installer",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Check for new versions apks in the downloads folder",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -15,14 +15,14 @@
     "Package.swift",
     "ApkFiles.podspec"
   ],
-  "author": "Abdeslam Gacemi",
+  "author": "SIG Service",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abdeslam-gacemi/apkfiles.git"
+    "url": "https://github.com/Ahmed-Sarmoum/capacitor-apk-installer.git"
   },
   "bugs": {
-    "url": "https://github.com/abdeslam-gacemi/apkfiles/issues"
+    "url": "https://github.com/Ahmed-Sarmoum/capacitor-apk-installer/issues"
   },
   "keywords": [
     "capacitor",
