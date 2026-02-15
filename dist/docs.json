@@ -1,0 +1,1348 @@
+{
+  "api": {
+    "name": "ApkFilesPlugin",
+    "slug": "apkfilesplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "listDownloadApks",
+        "signature": "(options?: ListApksOptions | undefined) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- Optional filtering options",
+            "type": "ListApksOptions | undefined"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Optional filtering options"
+          }
+        ],
+        "docs": "List APK files found in the Downloads directories",
+        "complexTypes": [
+          "ListApksOptions",
+          "ApkListResult"
+        ],
+        "slug": "listdownloadapks"
+      },
+      {
+        "name": "listAllApks",
+        "signature": "(options?: ListApksOptions | undefined) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- Optional filtering options",
+            "type": "ListApksOptions | undefined"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Optional filtering options"
+          }
+        ],
+        "docs": "List all APK files on the device (including Downloads and other directories)",
+        "complexTypes": [
+          "ListApksOptions",
+          "ApkListResult"
+        ],
+        "slug": "listallapks"
+      },
+      {
+        "name": "debugScan",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "Debug scan to check Download directories and their contents",
+        "complexTypes": [
+          "DebugScanResult"
+        ],
+        "slug": "debugscan"
+      },
+      {
+        "name": "scanSpecificPath",
+        "signature": "(options: ScanPathOptions) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- Path and filtering options",
+            "type": "ScanPathOptions"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Path and filtering options"
+          }
+        ],
+        "docs": "Scan a specific directory path for APK files",
+        "complexTypes": [
+          "ScanPathOptions",
+          "ScanPathResult"
+        ],
+        "slug": "scanspecificpath"
+      },
+      {
+        "name": "requestAllFilesAccess",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "Request \"All Files Access\" permission (Android 11+)",
+        "complexTypes": [
+          "PermissionResult"
+        ],
+        "slug": "requestallfilesaccess"
+      },
+      {
+        "name": "checkPermissions",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "Check current permissions status",
+        "complexTypes": [
+          "PermissionsStatus"
+        ],
+        "slug": "checkpermissions"
+      },
+      {
+        "name": "installApk",
+        "signature": "(options: InstallApkOptions) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- Installation options with file path",
+            "type": "InstallApkOptions"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Installation options with file path"
+          }
+        ],
+        "docs": "Install an APK file",
+        "complexTypes": [
+          "InstallApkOptions",
+          "InstallResult"
+        ],
+        "slug": "installapk"
+      },
+      {
+        "name": "startDownloadListener",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "Start listening for download completion events\r\nReturns a promise that resolves when listener is active\r\nFires 'downloadComplete' event when downloads finish",
+        "complexTypes": [
+          "DownloadListenerResult"
+        ],
+        "slug": "startdownloadlistener"
+      },
+      {
+        "name": "stopDownloadListener",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "Stop listening for download completion events",
+        "complexTypes": [
+          "DownloadListenerResult"
+        ],
+        "slug": "stopdownloadlistener"
+      },
+      {
+        "name": "downloadApk",
+        "signature": "(options: DownloadApkOptions) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- Download options including URL and filename",
+            "type": "DownloadApkOptions"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Download options including URL and filename"
+          }
+        ],
+        "docs": "Download an APK file using Android DownloadManager",
+        "complexTypes": [
+          "DownloadApkOptions",
+          "DownloadResult"
+        ],
+        "slug": "downloadapk"
+      },
+      {
+        "name": "getDownloadStatus",
+        "signature": "(options: DownloadStatusOptions) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- Download ID to check",
+            "type": "DownloadStatusOptions"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Download ID to check"
+          }
+        ],
+        "docs": "Get the status of a download",
+        "complexTypes": [
+          "DownloadStatusOptions",
+          "DownloadStatus"
+        ],
+        "slug": "getdownloadstatus"
+      },
+      {
+        "name": "cancelDownload",
+        "signature": "(options: CancelDownloadOptions) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- Download ID to cancel",
+            "type": "CancelDownloadOptions"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Download ID to cancel"
+          }
+        ],
+        "docs": "Cancel an ongoing download",
+        "complexTypes": [
+          "CancelDownloadOptions",
+          "CancelDownloadResult"
+        ],
+        "slug": "canceldownload"
+      },
+      {
+        "name": "deleteApk",
+        "signature": "(options: DeleteApkOptions) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- File path to delete",
+            "type": "DeleteApkOptions"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - File path to delete"
+          }
+        ],
+        "docs": "Delete an APK file from storage",
+        "complexTypes": [
+          "DeleteApkOptions",
+          "DeleteApkResult"
+        ],
+        "slug": "deleteapk"
+      },
+      {
+        "name": "startDownloadProgressListener",
+        "signature": "(options: DownloadProgressOptions) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- Download ID to monitor",
+            "type": "DownloadProgressOptions"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Download ID to monitor"
+          }
+        ],
+        "docs": "Start monitoring download progress for a specific download\r\nFires 'downloadProgress' events with real-time progress updates",
+        "complexTypes": [
+          "DownloadProgressOptions",
+          "DownloadProgressListenerResult"
+        ],
+        "slug": "startdownloadprogresslistener"
+      },
+      {
+        "name": "stopDownloadProgressListener",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "Stop monitoring download progress",
+        "complexTypes": [
+          "DownloadProgressListenerResult"
+        ],
+        "slug": "stopdownloadprogresslistener"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'downloadComplete', listenerFunc: (data: DownloadCompleteEvent) => void) => any",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "- Event name ('downloadComplete')",
+            "type": "'downloadComplete'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "- Callback function",
+            "type": "(data: DownloadCompleteEvent) => void"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "eventName - Event name ('downloadComplete')"
+          },
+          {
+            "name": "param",
+            "text": "listenerFunc - Callback function"
+          }
+        ],
+        "docs": "Add a listener for download completion events",
+        "complexTypes": [
+          "DownloadCompleteEvent",
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenerdownloadcomplete-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'installationStarted', listenerFunc: (data: InstallationEvent) => void) => any",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "- Event name ('installationStarted')",
+            "type": "'installationStarted'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "- Callback function",
+            "type": "(data: InstallationEvent) => void"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "eventName - Event name ('installationStarted')"
+          },
+          {
+            "name": "param",
+            "text": "listenerFunc - Callback function"
+          }
+        ],
+        "docs": "Add a listener for installation events",
+        "complexTypes": [
+          "InstallationEvent",
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenerinstallationstarted-"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'downloadProgress', listenerFunc: (data: DownloadProgressEvent) => void) => any",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "- Event name ('downloadProgress')",
+            "type": "'downloadProgress'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "- Callback function",
+            "type": "(data: DownloadProgressEvent) => void"
+          }
+        ],
+        "returns": "any",
+        "tags": [
+          {
+            "name": "param",
+            "text": "eventName - Event name ('downloadProgress')"
+          },
+          {
+            "name": "param",
+            "text": "listenerFunc - Callback function"
+          }
+        ],
+        "docs": "Add a listener for download progress events",
+        "complexTypes": [
+          "DownloadProgressEvent",
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenerdownloadprogress-"
+      },
+      {
+        "name": "removeAllListeners",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "Remove all listeners for this plugin",
+        "complexTypes": [],
+        "slug": "removealllisteners"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "ListApksOptions",
+      "slug": "listapksoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "appId",
+          "tags": [],
+          "docs": "Filter results by package name (appId)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "onlyLatest",
+          "tags": [],
+          "docs": "If true, only returns the latest version of each app\r\n(based on versionCode)",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        }
+      ]
+    },
+    {
+      "name": "ApkListResult",
+      "slug": "apklistresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "files",
+          "tags": [],
+          "docs": "Array of APK files found",
+          "complexTypes": [
+            "ApkFile"
+          ],
+          "type": "{}"
+        },
+        {
+          "name": "count",
+          "tags": [],
+          "docs": "Total count of files found",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "filteredBy",
+          "tags": [],
+          "docs": "Package name used for filtering (if any)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "onlyLatest",
+          "tags": [],
+          "docs": "Whether only latest versions were returned",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        }
+      ]
+    },
+    {
+      "name": "ApkFile",
+      "slug": "apkfile",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "name",
+          "tags": [],
+          "docs": "File name",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "uri",
+          "tags": [],
+          "docs": "Content URI of the file",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "path",
+          "tags": [],
+          "docs": "Absolute file path (may not be available on all Android versions)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "size",
+          "tags": [],
+          "docs": "File size in bytes",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "lastModified",
+          "tags": [],
+          "docs": "Last modified timestamp (milliseconds since epoch)",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "source",
+          "tags": [],
+          "docs": "Source where the file was found\r\n(e.g., \"Downloads\", \"MediaStore_Downloads\", \"Storage\")",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "appId",
+          "tags": [],
+          "docs": "Package name / application ID",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "apkVersionName",
+          "tags": [],
+          "docs": "Version name (e.g., \"1.0.0\")",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "apkVersionCode",
+          "tags": [],
+          "docs": "Version code (numeric version)",
+          "complexTypes": [],
+          "type": "string | number | undefined"
+        }
+      ]
+    },
+    {
+      "name": "DebugScanResult",
+      "slug": "debugscanresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "downloadDirectories",
+          "tags": [],
+          "docs": "Information about scanned download directories",
+          "complexTypes": [
+            "DirectoryInfo"
+          ],
+          "type": "{}"
+        },
+        {
+          "name": "hasStoragePermission",
+          "tags": [],
+          "docs": "Whether storage permission is granted",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "externalStorageState",
+          "tags": [],
+          "docs": "External storage state",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "DirectoryInfo",
+      "slug": "directoryinfo",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "path",
+          "tags": [],
+          "docs": "Directory path",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "exists",
+          "tags": [],
+          "docs": "Whether directory exists",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "isDirectory",
+          "tags": [],
+          "docs": "Whether path is a directory",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "canRead",
+          "tags": [],
+          "docs": "Whether directory is readable",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "totalFiles",
+          "tags": [],
+          "docs": "Total number of files in directory",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "apkCount",
+          "tags": [],
+          "docs": "Number of APK files found",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "files",
+          "tags": [],
+          "docs": "List of files in directory",
+          "complexTypes": [
+            "FileInfo"
+          ],
+          "type": "{} | undefined"
+        },
+        {
+          "name": "error",
+          "tags": [],
+          "docs": "Error message if scan failed",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "FileInfo",
+      "slug": "fileinfo",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "name",
+          "tags": [],
+          "docs": "File name",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "isFile",
+          "tags": [],
+          "docs": "Whether it's a file (not directory)",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "size",
+          "tags": [],
+          "docs": "File size in bytes",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "canRead",
+          "tags": [],
+          "docs": "Whether file is readable",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "isAPK",
+          "tags": [],
+          "docs": "Whether file is an APK",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "apkVersionName",
+          "tags": [],
+          "docs": "APK version name (if available)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "apkVersionCode",
+          "tags": [],
+          "docs": "APK version code (if available)",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "appId",
+          "tags": [],
+          "docs": "Package name (if available)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "ScanPathOptions",
+      "slug": "scanpathoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "path",
+          "tags": [],
+          "docs": "Directory path to scan",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "appId",
+          "tags": [],
+          "docs": "Filter results by package name",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "onlyLatest",
+          "tags": [],
+          "docs": "If true, only returns the latest version of each app",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        }
+      ]
+    },
+    {
+      "name": "ScanPathResult",
+      "slug": "scanpathresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "scannedPath",
+          "tags": [],
+          "docs": "Path that was scanned",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "pathExists",
+          "tags": [],
+          "docs": "Whether the path exists",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "pathIsDirectory",
+          "tags": [],
+          "docs": "Whether the path is a directory",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "pathCanRead",
+          "tags": [],
+          "docs": "Whether the path is readable",
+          "complexTypes": [],
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "PermissionResult",
+      "slug": "permissionresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "granted",
+          "tags": [],
+          "docs": "Whether permission is granted",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "message",
+          "tags": [],
+          "docs": "Status message",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "PermissionsStatus",
+      "slug": "permissionsstatus",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "hasStoragePermission",
+          "tags": [],
+          "docs": "Whether storage permission is granted",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "hasAllFilesAccess",
+          "tags": [],
+          "docs": "Whether \"All Files Access\" is granted (Android 11+)",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "canRequestInstallPackages",
+          "tags": [],
+          "docs": "Whether app can request package installs",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "sdkVersion",
+          "tags": [],
+          "docs": "Android SDK version",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "readExternalStorage",
+          "tags": [],
+          "docs": "Whether READ_EXTERNAL_STORAGE is granted",
+          "complexTypes": [],
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "InstallApkOptions",
+      "slug": "installapkoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "path",
+          "tags": [],
+          "docs": "Absolute path to the APK file",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "InstallResult",
+      "slug": "installresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "Installation status\r\n\"installation_started\" - Intent launched successfully\r\n\"permission_required\" - Need to enable install permission",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "message",
+          "tags": [],
+          "docs": "Status message",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "apkPath",
+          "tags": [],
+          "docs": "Path of the APK concerned (only when permission_required)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "DownloadListenerResult",
+      "slug": "downloadlistenerresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "listening",
+          "tags": [],
+          "docs": "Whether listener is active",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "message",
+          "tags": [],
+          "docs": "Status message",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "sdkVersion",
+          "tags": [],
+          "docs": "Android SDK version (when starting listener)",
+          "complexTypes": [],
+          "type": "number | undefined"
+        }
+      ]
+    },
+    {
+      "name": "DownloadApkOptions",
+      "slug": "downloadapkoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "path",
+          "tags": [],
+          "docs": "URL of the APK file to download",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "tags": [],
+          "docs": "Title shown in download notification",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "description",
+          "tags": [],
+          "docs": "Description shown in download notification",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "DownloadResult",
+      "slug": "downloadresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "downloadId",
+          "tags": [],
+          "docs": "Download ID assigned by DownloadManager",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "fileName",
+          "tags": [],
+          "docs": "Filename being downloaded",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "tags": [],
+          "docs": "URL being downloaded",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "message",
+          "tags": [],
+          "docs": "Status message (deprecated, use other fields)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "DownloadStatusOptions",
+      "slug": "downloadstatusoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "downloadId",
+          "tags": [],
+          "docs": "Download ID to check",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "DownloadStatus",
+      "slug": "downloadstatus",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "downloadId",
+          "tags": [],
+          "docs": "Download ID",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "Status string: \"PENDING\", \"RUNNING\", \"PAUSED\", \"SUCCESSFUL\", \"FAILED\", \"UNKNOWN\"",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "statusCode",
+          "tags": [],
+          "docs": "Status code (numeric)",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "reason",
+          "tags": [],
+          "docs": "Reason code (for failures/pauses)",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "bytesDownloaded",
+          "tags": [],
+          "docs": "Bytes downloaded so far",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "bytesTotal",
+          "tags": [],
+          "docs": "Total bytes to download",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "uri",
+          "tags": [],
+          "docs": "File URI (available when complete)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "title",
+          "tags": [],
+          "docs": "Download title",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "progress",
+          "tags": [],
+          "docs": "Download progress percentage (0-100)",
+          "complexTypes": [],
+          "type": "number | undefined"
+        }
+      ]
+    },
+    {
+      "name": "CancelDownloadOptions",
+      "slug": "canceldownloadoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "downloadId",
+          "tags": [],
+          "docs": "Download ID to cancel",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "CancelDownloadResult",
+      "slug": "canceldownloadresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "removed",
+          "tags": [],
+          "docs": "Whether download was removed",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "downloadId",
+          "tags": [],
+          "docs": "Download ID that was cancelled",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "DeleteApkOptions",
+      "slug": "deleteapkoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "path",
+          "tags": [],
+          "docs": "Absolute path to the APK file to delete",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "DeleteApkResult",
+      "slug": "deleteapkresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "deleted",
+          "tags": [],
+          "docs": "Whether file was deleted successfully",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "path",
+          "tags": [],
+          "docs": "Path that was deleted",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "DownloadProgressOptions",
+      "slug": "downloadprogressoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "downloadId",
+          "tags": [],
+          "docs": "Download ID to monitor",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "DownloadProgressListenerResult",
+      "slug": "downloadprogresslistenerresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "listening",
+          "tags": [],
+          "docs": "Whether progress listener is active",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "downloadId",
+          "tags": [],
+          "docs": "Download ID being monitored",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "message",
+          "tags": [],
+          "docs": "Status message",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "DownloadCompleteEvent",
+      "slug": "downloadcompleteevent",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "event",
+          "tags": [],
+          "docs": "Event type",
+          "complexTypes": [],
+          "type": "'download_complete'"
+        },
+        {
+          "name": "downloadId",
+          "tags": [],
+          "docs": "Download ID that completed",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "timestamp",
+          "tags": [],
+          "docs": "Timestamp when download completed (milliseconds since epoch)",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "apkPath",
+          "tags": [],
+          "docs": "APK file path (if available)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => any"
+        }
+      ]
+    },
+    {
+      "name": "InstallationEvent",
+      "slug": "installationevent",
+      "docs": "Event fired when installation is triggered (after permission grant or directly)",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "event",
+          "tags": [],
+          "docs": "Event type: 'installation_started' or 'installation_error'",
+          "complexTypes": [],
+          "type": "'installation_started' | 'installation_error'"
+        },
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "Installation status",
+          "complexTypes": [],
+          "type": "'error' | 'installation_started'"
+        },
+        {
+          "name": "message",
+          "tags": [],
+          "docs": "Status message",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "path",
+          "tags": [],
+          "docs": "Path of the APK being installed (optional)",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "DownloadProgressEvent",
+      "slug": "downloadprogressevent",
+      "docs": "Event fired during download progress\r\nUpdates every ~500ms while download is active",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "downloadId",
+          "tags": [],
+          "docs": "Download ID being monitored",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "bytesDownloaded",
+          "tags": [],
+          "docs": "Bytes downloaded so far",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "bytesTotal",
+          "tags": [],
+          "docs": "Total bytes to download",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "progress",
+          "tags": [],
+          "docs": "Download progress percentage (0-100)",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "Current download status: \"PENDING\", \"RUNNING\", \"PAUSED\", \"SUCCESSFUL\", \"FAILED\"",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "statusCode",
+          "tags": [],
+          "docs": "Status code (numeric)",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "error",
+          "tags": [],
+          "docs": "Error message (only present if status is \"FAILED\")",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
