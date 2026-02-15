@@ -1,6 +1,6 @@
 {
   "name": "@ahmed-sarmoum/capacitor-apk-installer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check for new versions apks in the downloads folder",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
