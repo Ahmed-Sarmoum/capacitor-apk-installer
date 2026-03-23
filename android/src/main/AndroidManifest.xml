@@ -5,7 +5,7 @@
 
         <provider
             android:name="com.upgrader.apkfiles.ApkFilesProvider"
-            android:authorities="${applicationId}.apkfilesprovider"
+            android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
